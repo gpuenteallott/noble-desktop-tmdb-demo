@@ -1,15 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 	<meta charset="utf-8">
 	<title>Title</title>
 
 	<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'/>
 
+	<link rel="stylesheet" href="/css/index.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans" rel="stylesheet">
+
 	<base href="/">
 </head>
 <body>
-	<%- body %>
+
+	<header>
+		<h1>NobleDesktop + The Movie DB</h1>
+	</header>
+
+	<div id="main-container">
+		<%- body %>
+	</div>
+
+	<footer>
+		Thank you. <a href="https://www.nobledesktop.com/">www.nobledesktop.com</a>
+	</footer>
+
+	<script id="bootstrap-data">
+		window.bootstrapData = <%-JSON.stringify(bootstrapData)%>;
+	</script>
+	<script src="/js/bundles/index.js"></script>
 </body>
 </html>

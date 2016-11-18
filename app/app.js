@@ -27,15 +27,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json request parameters. BackboneJS sends params in json format by default
 app.use(bodyParser.json());
 
+// all routes are in controllers/routes.js
+var routes = require('./server/controllers/routes')(app);
+
 // set public directory for assets like css and js files
 app.use(express.static(__dirname + '/public'));
 
 // explicitly indicate views directory, as it was failing otherwise
 app.set('views', __dirname + "/server/views");
-
-// controller actions
-var indexController = require("./server/controllers/indexController");
-app.all('*', indexController.index);
 
 // ---------------------------------------------
 // Multi thread server, thanks to @greggilbert
@@ -60,8 +59,7 @@ if (cluster.isMaster) {
 		console.log('Worker '+oldPID+' died.');
 		console.log('Worker '+newPID+' born.');
 	});
-}
-else {
+} else {
 	// Start app
 	app.listen(_PORT, _IP, function(){
 		// Put a friendly message on the terminal

@@ -1,0 +1,33 @@
+.movie-card-container
+	width 95%
+	text-align center
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	justify-content center
+	align-items stretch
+	// align-content start
+
+.movie-card
+	width 12rem
+	background-color $colors[5]
+	padding .5rem
+	margin .8rem .4rem
+	border-radius 5px
+	display inline-block
+	border solid 1px $colors[2]
+	text-align left
+
+	&-poster-image
+		width 100%
+		border-radius 5px
+		margin-bottom .5rem
+
+	&-title
+		font-size 1.1rem
+		margin-bottom .4rem
+		line-height 1.2
+
+	&-release-date
+		font-size .8rem
+		color $colors[2]

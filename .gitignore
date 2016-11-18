@@ -2,3 +2,6 @@ docker/.env
 node_modules
 etc/certs/*.crt
 etc/certs/*.key
+
+app/public/js
+app/public/css
