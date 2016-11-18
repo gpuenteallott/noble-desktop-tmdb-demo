@@ -1,19 +1,15 @@
-# Node-Docker Quickstart
+This sample project was made for a quick web development teaching demo at NobleDesktop NYC (nobledesktop.com). It's a simple vanilla JS front-end that pulls movies from TMDB.
 
-Starting point to develop a node app using Docker.
+# Quickstart
 
-1. `export NODE_PROJECT_ROOT=path/to/the/repo`
-
-2. Duplicate `docker/.env.dist` into `docker/.env`
+1. Duplicate `docker/.env.dist` into `docker/.env`. Set TMDB API v3 key and base url there.
 
 2. `npm install`
 
-3. Generate a self signed certificate (to start). `openssl req -newkey rsa:2048 -nodes -keyout etc/certs/project.key -x509 -days 365 -out etc/certs/project.crt`
+3. Build the container. `docker-compose build`
 
-4. Build the container. `docker-compose build`
+4. Kick it off. `docker-compose up -d`
 
-5. Kick it off. `docker-compose up -d`
-
-6. Ensure the app didn't throw any errors. `docker-compose logs`
+5. Ensure the app didn't throw any errors. `docker-compose logs`
 
 Site should be running. Hit the IP address of your docker machine on ports 8088 or 8043 to see.
